@@ -21,16 +21,20 @@ Following the back-to-back clipping stage, you'll find the tone knob (potentiome
 ### LED Control section
 You might know this circuit as 'The Millennium Bypass.' Usually, you'd need a 3PDT switch for a true bypass with an LED indicator control. But back in the day, 3PDT switches were hard to find. That's why pedals like the RAT used this bypass method. Normally, a 2PDT switch only gives you true bypass. However, by adding a JFET, this design also lets you control the LED's on/off state.
 
-Below, I've sketched out simple schematics for three different true bypass methods, all in their bypass mode. Most of these are pretty straightforward, but the Millennium Bypass has a counter-intuitive quirk with its LED section: the LED actually goes off when LED section is connected to the circuit. I'll explain exactly why that happens further down."
+Below, I've sketched out simple schematics for three different true bypass methods, all in their bypass mode. Most of these are pretty straightforward, but the Millennium Bypass has a counter-intuitive quirk with its LED section: the LED actually goes off when LED section is connected to the circuit. I'll explain exactly why that happens further down.
 ---pic---
 ### The Millennium Bypass
 ---pic---
+As you can see in the picture on the above, when the circuit is in bypass mode, the gate of the 5458 JFET is pulled directly to GND. Because the gate is at GND, Vgs becomes almost 0, so the JFET channel closes. Even though 9V is still connected through the 2M2 resistor, its high resistance prevents it from affecting the gate voltage significantly.
+
+On the other hand, when the effect is engaged, the gate is only pulled up to 9V through the 2M2 resistor. This creates a sufficiently positive Vgs, allowing the JFET channel to open.
 
 ### Schematic Creation
+----pic---
 While the design largely follows the original, I encountered some resistance values that weren't available in my inventory. For these, I used series or parallel combinations to achieve approximate values. 
 The original RAT 2 uses the LM308 op-amp, but I wasn't keen on using a chip so specifically limited to just this pedal. Therefore, I opted for the TL072, which is more commonly used and versatile in guitar effects. 
 Since the LM308 is a single op-amp and the TL072 is a dual op-amp, I adjusted the pinouts accordingly. I also configured the circuit to deactivate the second op-amp of the TL072.
 
 ### PCB layout Creation
-
+---pic
 
