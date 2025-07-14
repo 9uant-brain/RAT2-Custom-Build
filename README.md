@@ -15,12 +15,17 @@ This is the 9V voltage input section, and all other parts of the circuit receive
 ### Clipping (gain) section 
 This is core section. The circuit uses an LM308 to form a non-inverting amplifier, for amplifying raw guitar signal. At the op-amp's output, there's a back-to-back diode clipping circuit. Signals exceeding the diodes' forward voltage are shunted to ground, which clips the upper part of the waveform. This is the principle behind the characteristic "chugging" sound of electric guitars. So, changing diodes is a common modification for distortion and overdrive pedals among guitarists.
 
-### Tone, output section.
+### Tone, output section
 Following the back-to-back clipping stage, you'll find the tone knob (potentiometer). This component adjusts the resistance (R) in an RC filter to control the high frequencies of the output signal. After this, a JFET (5458) acts as a source follower, serving to adequately boost the signal's strength.
-## Design and Implementation
+
+### LED Control section
+This circuit also called as 'The Millenium Bypass'. 3pdt is needed for true bypass with LED indication control. Red on/off, input - circuit - ouput, input - bypass - ouput. But back in the days, 3pdt was difficult to get. So rat used this bypass logic. Normally with 2pdt, only can implement true bypass. Addition of jfet, it is also able to control LED on/off.
+
 ### Schematic Creation
 While the design largely follows the original, I encountered some resistance values that weren't available in my inventory. For these, I used series or parallel combinations to achieve approximate values. 
 The original RAT 2 uses the LM308 op-amp, but I wasn't keen on using a chip so specifically limited to just this pedal. Therefore, I opted for the TL072, which is more commonly used and versatile in guitar effects. 
 Since the LM308 is a single op-amp and the TL072 is a dual op-amp, I adjusted the pinouts accordingly. I also configured the circuit to deactivate the second op-amp of the TL072.
+
 ### PCB layout Creation
+
 
