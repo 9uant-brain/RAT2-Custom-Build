@@ -7,7 +7,7 @@ For this project, all design work was carried out using KiCad, an open-source ED
 
 ## Circuit analysis
 It can be broadly categorized into four sections: Power Supply, Gain, Tone, and LED Control.
-
+ --- pic ---
 ### Power supply section
 
 This is the 9V voltage input section, and all other parts of the circuit receive their power from here. The diode conducts only when the voltage is reversed. When it conducts, all current flows through a 100-ohm resistor. This happens because, for reverse current, the resistance on that path is significantly lower. The 100uF capacitor is for 9V voltage stabilization, while the two 100k resistors form a voltage divider that converts the 9V supply to 4.5V. The 1uF capacitor then stabilizes the voltage from this voltage divider.
@@ -19,7 +19,12 @@ This is core section. The circuit uses an LM308 to form a non-inverting amplifie
 Following the back-to-back clipping stage, you'll find the tone knob (potentiometer). This component adjusts the resistance (R) in an RC filter to control the high frequencies of the output signal. After this, a JFET (5458) acts as a source follower, serving to adequately boost the signal's strength.
 
 ### LED Control section
-This circuit also called as 'The Millenium Bypass'. 3pdt is needed for true bypass with LED indication control. Red on/off, input - circuit - ouput, input - bypass - ouput. But back in the days, 3pdt was difficult to get. So rat used this bypass logic. Normally with 2pdt, only can implement true bypass. Addition of jfet, it is also able to control LED on/off.
+You might know this circuit as 'The Millennium Bypass.' Usually, you'd need a 3PDT switch for a true bypass with an LED indicator control. But back in the day, 3PDT switches were hard to find. That's why pedals like the RAT used this bypass method. Normally, a 2PDT switch only gives you true bypass. However, by adding a JFET, this design also lets you control the LED's on/off state.
+
+Below, I've sketched out simple schematics for three different true bypass methods, all in their bypass mode. Most of these are pretty straightforward, but the Millennium Bypass has a counter-intuitive quirk with its LED section: the LED actually goes off when LED section is connected to the circuit. I'll explain exactly why that happens further down."
+---pic---
+### The Millennium Bypass
+---pic---
 
 ### Schematic Creation
 While the design largely follows the original, I encountered some resistance values that weren't available in my inventory. For these, I used series or parallel combinations to achieve approximate values. 
