@@ -36,5 +36,19 @@ The original RAT 2 uses the LM308 op-amp, but I wasn't keen on using a chip so s
 Since the LM308 is a single op-amp and the TL072 is a dual op-amp, I adjusted the pinouts accordingly. I also configured the circuit to deactivate the second op-amp of the TL072.
 
 ### PCB layout Creation
----pic
 
+---pic--- 
+
+
+The picture above shows an early version of the PCB layout. 
+Since I had to learn PCB design on my own, at first I wasn’t sure how large to make the board or how to shape the edge.cut layer. After I finished the initial design, I realized, "I can’t actually fit this PCB inside a 1590B enclosure, even with the audio jacks and DC jacks.
+So, I decided to redesign it from scratch.
+
+---pic--
+After several revisions, this layout was finally completed.
+
+I needed to go through multiple revisions because I wasn’t used to placing footprints efficiently at first. So I practiced by redesigning the PCB several times.
+
+You might also notice there’s a hole in the middle of the PCB. When I finished the last revision, I realized I hadn’t considered the position of the DC jack. Instead of redesigning the PCB again, I came up with the idea of making a hole in the middle.
+
+As far as I know, there’s no guitar effect pedal that places its DC jack in the center like this, so I was quite satisfied with that clever solution.
