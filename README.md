@@ -1,10 +1,14 @@
 
-## Introduction
+## Why I made this 
+I’d been playing electric guitar for years, and like many people, I used digital multi-effect processors because they’re more affordable and convenient than buying several separate analog pedals.
+A few months ago, I found out that some Chinese analog pedals were surprisingly affordable, so I bought one out of curiosity — and got completely hooked by the physical feel. So I bought a few more, and eventually even tried assembling a DIY soldering kit.
+After finishing the kit, I realized that if I could design the PCB myself, I could build these pedals even more cheaply and customize them the way I wanted. That’s what led me to learn PCB design from scratch.
+### The RAT2 - Simple but Effective
 
-The RAT 2 is an effect pedal that was first released in the 1970s and 80s. 
-Despite its age, it remains incredibly popular today. Its enduring appeal, especially for beginners in pedal building, stems from its simple circuit design, which makes it an ideal for my first project.
-For this project, all design work was carried out using KiCad, an open-source EDA software.
+The RAT2 is a distortion pedal first released in the late 1970s.  
+Despite its age, it’s still incredibly popular today. Its enduring appeal — especially among beginners in pedal building — comes from its simple and elegant circuit design, making it a perfect choice for my first project.
 
+All schematic and PCB design work was done using KiCad, an open-source EDA software.
 ## Circuit analysis
 It can be broadly categorized into four sections: Power Supply, Gain, Tone, and LED Control.
  --- pic ---
