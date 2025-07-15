@@ -13,7 +13,10 @@ Despite its age, it’s still incredibly popular today. Its enduring appeal — 
 All schematic and PCB design work was done using KiCad, an open-source EDA software.
 ## Circuit analysis
 It can be broadly categorized into four sections: Power Supply, Gain, Tone, and LED Control.
- --- pic ---
+	<p align="center">
+  <img src="https://github.com/user-attachments/assets/c6f62f10-a760-46af-982d-2febacfc35e3">
+</p>
+
 ### Power supply section
 
 This is the 9V voltage input section, and all other parts of the circuit receive their power from here. The diode conducts only when the voltage is reversed. When it conducts, all current flows through a 100-ohm resistor. This happens because, for reverse current, the resistance on that path is significantly lower. The 100uF capacitor is for 9V voltage stabilization, while the two 100k resistors form a voltage divider that converts the 9V supply to 4.5V. The 1uF capacitor then stabilizes the voltage from this voltage divider.
