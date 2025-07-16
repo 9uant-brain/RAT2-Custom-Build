@@ -44,6 +44,8 @@ As you can see in the picture on the above, when the circuit is in bypass mode, 
 
 On the other hand, when the effect is engage mode(the lime route is disconnected), the gate is only pulled up to 9V through the 2M2 resistor(Red line). This creates a sufficiently positive Vgs, allowing the JFET channel to open.
 
+## Design and Implementation
+
 ### Schematic Creation
 	
  <p align="center">
@@ -75,3 +77,14 @@ I needed to go through multiple revisions because I wasn’t used to placing foo
 You might also notice there’s a hole in the middle of the PCB. When I finished the last revision, I realized I hadn’t considered the position of the DC jack. Instead of redesigning the PCB again, I came up with the idea of making a hole in the middle.
 
 As far as I know, there’s no guitar effect pedal that places its DC jack in the center like this, so I was quite satisfied with that clever solution.
+
+#### Enclosure consideration
+
+While revising the PCB, I measured the actual size of the 1590B enclosure I had using vernier calipers. Then, I drew the footprint net to match the exact dimensions of the enclosure. I measured both the outer rectangle and the inner rectangle: the outer size was used for aligning the printed guide paper to the outside of the enclosure, while the inner size was used to set the board's dimensions and place internal components such as audio jacks and the foot switch.
+
+I also added arrows to indicate where holes would be drilled for the LED and potentiometer shafts. Since these parts are visible from the outside, I carefully positioned them to match the enclosure’s proportions. Additionally, I made sure to leave enough distance between the shafts so that, once the knobs are attached, they won’t interfere with each other. 
+
+As you can see on the bottom left, there is the enclosure footprint. As you can see on the bottom right, I drew the PCB layout directly over this footprint to make sure my design would fit perfectly inside the enclosure.
+<p align="center">
+  <img src=>
+</p>
