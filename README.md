@@ -88,3 +88,28 @@ As you can see on the bottom left, there is the enclosure footprint. As you can 
 <p align="center">
   <img src=>
 </p>
+
+## PCB Ordering & Assembly
+### Ordering, cutting PCB
+<p align="center">
+  <img src=>
+</p>
+<p align="center">
+  <img src=>
+</p>
+With the availability of low-cost PCB manufacturing services these days, I decided that outsourcing production would be far more efficient than attempting DIY etching. I placed an order through PCBWay, a popular PCB fabrication service.
+
+To reduce costs, I took advantage of their fixed pricing for boards under 10cm x 10cm. I combined multiple pedal circuit designs into a single multi-layout board and omitted the V-cut option to stay within budget. I cut the board using a wire saw and smoothed the edges with sandpaper.
+### Enclosure drilling
+<p align="center">
+  <img src=>
+</p>
+To ensure precise drilling for the enclosure, I first printed the footprint at a 1:1 scale to create a drilling guide. I glued the printout onto the enclosure and drilled according to the marked holes.
+
+To achieve accurate alignment, I followed these steps:
+
+1. Punctured the center of each hole on the paper using an awl.
+2. Used a nail to make a light center punch.
+3. Drilled pilot holes with a 1.5mm bit.
+4. Enlarged the holes using a step drill bit to the desired size.
+
