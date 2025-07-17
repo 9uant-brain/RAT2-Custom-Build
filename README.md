@@ -14,7 +14,7 @@ All schematic and PCB design work was done using KiCad, an open-source EDA softw
 ## Circuit analysis
 It can be broadly categorized into four sections: Power Supply, Gain, Tone, and LED Control.
 	<p align="center">
-  <img src="https://github.com/user-attachments/assets/c6f62f10-a760-46af-982d-2febacfc35e3">
+  <img src="https://github.com/user-attachments/assets/c6f62f10-a760-46af-982d-2febacfc35e3" width="80%" height="80%">
 </p>
 
 ### Power supply section
@@ -32,7 +32,7 @@ You might know this circuit as 'The Millennium Bypass.' Usually, you'd need a 3P
 
 Below, I've sketched out simple schematics for three different true bypass methods, all in their bypass mode. Most of these are pretty straightforward, but the Millennium Bypass has a counter-intuitive quirk with its LED section: the LED actually goes off when LED section is connected to the circuit. I'll explain exactly why that happens further down.
 <p align="center">
-  <img src="https://private-user-images.githubusercontent.com/204548792/466495233-fb15be54-6533-483f-9528-173ae62bb91f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTI1ODQ3NzgsIm5iZiI6MTc1MjU4NDQ3OCwicGF0aCI6Ii8yMDQ1NDg3OTIvNDY2NDk1MjMzLWZiMTViZTU0LTY1MzMtNDgzZi05NTI4LTE3M2FlNjJiYjkxZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNzE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDcxNVQxMzAxMThaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iOWExNjAwZTBmMDZhZDlmYmNhMGRiZmExMjNkMzIyNWUwNDNjOGRlYzM4MjRjMGRkNzVjNzUxODA4Y2FiZjliJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.k9JkBHPuEVCBAlt5nwCOrKCi7fEsQVsaK0DBf9QoU9c">
+  <img src="https://private-user-images.githubusercontent.com/204548792/466495233-fb15be54-6533-483f-9528-173ae62bb91f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTI1ODQ3NzgsIm5iZiI6MTc1MjU4NDQ3OCwicGF0aCI6Ii8yMDQ1NDg3OTIvNDY2NDk1MjMzLWZiMTViZTU0LTY1MzMtNDgzZi05NTI4LTE3M2FlNjJiYjkxZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNzE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDcxNVQxMzAxMThaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iOWExNjAwZTBmMDZhZDlmYmNhMGRiZmExMjNkMzIyNWUwNDNjOGRlYzM4MjRjMGRkNzVjNzUxODA4Y2FiZjliJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.k9JkBHPuEVCBAlt5nwCOrKCi7fEsQVsaK0DBf9QoU9c" width="80%" height="80%">
 </p>
 
 ### The Millennium Bypass
@@ -49,7 +49,7 @@ On the other hand, when the effect is engage mode(the lime route is disconnected
 ### Schematic Creation
 	
  <p align="center">
-  <img src="https://private-user-images.githubusercontent.com/204548792/466495237-f4642b37-b8d7-4040-9003-0a6b1cbda21f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTI1ODUxMDEsIm5iZiI6MTc1MjU4NDgwMSwicGF0aCI6Ii8yMDQ1NDg3OTIvNDY2NDk1MjM3LWY0NjQyYjM3LWI4ZDctNDA0MC05MDAzLTBhNmIxY2JkYTIxZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNzE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDcxNVQxMzA2NDFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xYzBkYjBiYzgzOTRhMWYxMWEwMzhhNTBmYTBiYTg4NTZiNzk4ZTY5YWYzYTMyYzYxMmMwYmU1ZGZkYjU2ODA1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.YMrOmXduQZvBCqsLPTaM9H2DFLwhM4kcK39OkhZe6S4">
+  <img src="https://private-user-images.githubusercontent.com/204548792/466495237-f4642b37-b8d7-4040-9003-0a6b1cbda21f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTI1ODUxMDEsIm5iZiI6MTc1MjU4NDgwMSwicGF0aCI6Ii8yMDQ1NDg3OTIvNDY2NDk1MjM3LWY0NjQyYjM3LWI4ZDctNDA0MC05MDAzLTBhNmIxY2JkYTIxZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNzE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDcxNVQxMzA2NDFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xYzBkYjBiYzgzOTRhMWYxMWEwMzhhNTBmYTBiYTg4NTZiNzk4ZTY5YWYzYTMyYzYxMmMwYmU1ZGZkYjU2ODA1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.YMrOmXduQZvBCqsLPTaM9H2DFLwhM4kcK39OkhZe6S4" width="80%" height="80%">
 </p>
 While the design largely follows the original, I encountered some resistance values that weren't available in my inventory. For these, I used series or parallel combinations to achieve approximate values. 
 The original RAT 2 uses the LM308 op-amp, but I wasn't keen on using a chip so specifically limited to just this pedal. Therefore, I opted for the TL072, which is more commonly used and versatile in guitar effects. 
@@ -86,7 +86,7 @@ I also added arrows to indicate where holes would be drilled for the LED and pot
 
 As you can see on the bottom left, there is the enclosure footprint. As you can see on the bottom right, I drew the PCB layout directly over this footprint to make sure my design would fit perfectly inside the enclosure.
 <p align="center">
-  <img src=asset/pcb_case.png>
+  <img src=asset/pcb_case.png width="80%" height="80%">
 </p>
 
 ## PCB Ordering & Assembly
@@ -102,7 +102,7 @@ With the availability of low-cost PCB manufacturing services these days, I decid
 To reduce costs, I took advantage of their fixed pricing for boards under 10cm x 10cm. I combined multiple pedal circuit designs into a single multi-layout board and omitted the V-cut option to stay within budget. I cut the board using a wire saw and smoothed the edges with sandpaper.
 ### Enclosure drilling
 <p align="center">
-  <img src=asset/drill.jpeg>
+  <img src=asset/drill.jpeg width="80%" height="80%">
 </p>
 To ensure precise drilling for the enclosure, I first printed the footprint at a 1:1 scale to create a drilling guide. I glued the printout onto the enclosure and drilled according to the marked holes.
 
