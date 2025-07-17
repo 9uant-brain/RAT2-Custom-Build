@@ -86,23 +86,23 @@ I also added arrows to indicate where holes would be drilled for the LED and pot
 
 As you can see on the bottom left, there is the enclosure footprint. As you can see on the bottom right, I drew the PCB layout directly over this footprint to make sure my design would fit perfectly inside the enclosure.
 <p align="center">
-  <img src=>
+  <img src=asset/pcb_case.png>
 </p>
 
 ## PCB Ordering & Assembly
 ### Ordering, cutting PCB
 <p align="center">
-  <img src=>
+  <img src=asset/pcb_cad.png width="50%" height="50%">
 </p>
 <p align="center">
-  <img src=>
+  <img src=asset/pcb_cut.png width="50%" height="50%">
 </p>
 With the availability of low-cost PCB manufacturing services these days, I decided that outsourcing production would be far more efficient than attempting DIY etching. I placed an order through PCBWay, a popular PCB fabrication service.
 
 To reduce costs, I took advantage of their fixed pricing for boards under 10cm x 10cm. I combined multiple pedal circuit designs into a single multi-layout board and omitted the V-cut option to stay within budget. I cut the board using a wire saw and smoothed the edges with sandpaper.
 ### Enclosure drilling
 <p align="center">
-  <img src=>
+  <img src=asset/drill.jpeg>
 </p>
 To ensure precise drilling for the enclosure, I first printed the footprint at a 1:1 scale to create a drilling guide. I glued the printout onto the enclosure and drilled according to the marked holes.
 
@@ -118,6 +118,6 @@ To achieve accurate alignment, I followed these steps:
 </p>
 I soldered the pcb as usual, tested in bare board. First, It sounded very loud stinging sound at high gain knob, and when gain was lowered, sounded kind like oil fying sound. I suspected, when I was soldering jfet - the one before volume pot is.-, I made a mistake making bridge between jfet pins. Although I desoldered the bridge at very moment I made mistake, maybe it won't work. Then, I desoldered the pads and tested again, but wasn't fixed. So, I removed the jfet from pad, and hardwired to connecting jfet to circuit. You can see hardwired circuit in picture below.
 <p align="center">
-  <img src=>
+  <img src=asset/hardwire.jpeg>
 </p>
 
