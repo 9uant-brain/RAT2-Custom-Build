@@ -119,11 +119,24 @@ To achieve accurate alignment, I followed these steps:
 I soldered the PCB as usual and tested it on a bare board. At first, it made a very loud, stinging noise when the gain knob was turned up high, and when the gain was lowered, it made a sound kind of like oil frying.
 
 I suspected that when I was soldering the JFET — the one before the volume pot — I might have accidentally created a solder bridge between the JFET pins. I removed the bridge immediately at that moment, but when I tested the circuit later, the problem still appeared. 
+
 So I desoldered the pads and tested again, but it didn’t fix the issue. At that point, I thought the pads on the PCB might have been damaged during the work.Or, JFET had been damaged by short. Then, I removed the JFET from the pads completely and tested if it is still working, and hardwired it directly into the circuit. As it turns out, the JFET was working fine; the problem was with the pads. You can see this hardwired setup in the picture below.
 
 
 <p align="center">
   <img src=asset/hardwire.jpeg width="30%" height="30%">
 </p>
+
 ### Debugging
-After fixing JFET, still there was treble oscillating in high gain. I have no idea to deal with it, so I discussed it with GPT. GPT helped me identify differences in slew rate and internal compensation as possible causes -I had to remove internal compesate capacitor while replace lm308 to TL072-. As they are different pinout - As, LM308 is single opamp, TL072 is dual opamp.-. But I didn't want editing, ordering PCB again, I have to keep using TL072. So I discussed it with GPT. Then I figured out, the ceramic disc capacitors was a problem. They are used in orinal circuit, but there isn't a problem. Because LM308 has significantly low slewrate(0.3V/us) than TL072 (13V/µs).Also, ceramic disc caps causes piezoelectric effect which makes the opamp more unstable. So, I substitute ceramic discs with MLCC capacitors, which are more stable, has lower esr at high frequencies.
+After fixing the JFET issue, there was still a high-frequency oscillation in the treble range when the gain was turned up. I had no idea how to deal with it at first, so I discussed it with GPT. GPT helped me identify differences in the TL072’s higher slew rate as possible causes. However, as I didn’t want to edit and reorder the PCB, I couldn't change TL072 with LM308. So I decided to keep using the TL072.
+
+Then I figured out there was another chip, the JRC4558, which has the same pinout but a lower slew rate than the TL072. So I ordered a 4558 and replaced the TL072, but it still didn’t fix the oscillation.
+
+After discussing it again with GPT, I realized the problem might be the ceramic disc capacitors. Although they were used in the original circuit without issues, the LM308 has a significantly lower slew rate (0.3 V/µs) compared to the TL072 (13 V/µs) or even the 4558 (1.7 V/µs). The reason slew rate matters is that a higher slew rate allows an op-amp to respond faster to changes in the signal, which can lead to unintended oscillation if the circuit isn’t properly compensated. Also, ceramic disc capacitors tend to have higher ESR and less stable characteristics at high frequencies. When this used as a feedback capacitor, this can prevent high frequencies from being properly bypassed, which keeps them in the feedback loop and leads to oscillation.
+
+So I substituted the ceramic discs with MLCC capacitors, which have lower ESR at high frequencies.
+<p align="center">
+  <img src=asset/mlcc.jpeg width="50%" height="50%">
+</p>
+It worked quite well — the oscillation threshold (i.e., the gain level at which oscillation starts) has increased. In other words, I can now turn the gain up higher without encountering oscillation.
+Additionally, since I used a chip with a higher slew rate, I also changed the value of the gain potentiometer. The original 100K pot caused excessive amplification even at around halfway, so I replaced it with a 50K ohm pot.
