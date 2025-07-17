@@ -112,4 +112,12 @@ To achieve accurate alignment, I followed these steps:
 2. Used a nail to make a light center punch.
 3. Drilled pilot holes with a 1.5mm bit.
 4. Enlarged the holes using a step drill bit to the desired size.
+### Soldering & Testing
+<p align="center">
+  <img src=asset/bare_test.jpg>
+</p>
+I soldered the pcb as usual, tested in bare board. First, It sounded very loud stinging sound at high gain knob, and when gain was lowered, sounded kind like oil fying sound. I suspected, when I was soldering jfet - the one before volume pot is.-, I made a mistake making bridge between jfet pins. Although I desoldered the bridge at very moment I made mistake, maybe it won't work. Then, I desoldered the pads and tested again, but wasn't fixed. So, I removed the jfet from pad, and hardwired to connecting jfet to circuit. You can see hardwired circuit in picture below.
+<p align="center">
+  <img src=>
+</p>
 
