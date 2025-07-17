@@ -95,7 +95,7 @@ As you can see on the bottom left, there is the enclosure footprint. As you can 
   <img src=asset/pcb_cad.png width="50%" height="50%">
 </p>
 <p align="center">
-  <img src=asset/pcb_cut.png width="50%" height="50%">
+  <img src=asset/pcb_cut.jpg width="50%" height="50%">
 </p>
 With the availability of low-cost PCB manufacturing services these days, I decided that outsourcing production would be far more efficient than attempting DIY etching. I placed an order through PCBWay, a popular PCB fabrication service.
 
@@ -116,8 +116,14 @@ To achieve accurate alignment, I followed these steps:
 <p align="center">
   <img src=asset/bare_test.jpg width="50%" height="50%">
 </p>
-I soldered the pcb as usual, tested in bare board. First, It sounded very loud stinging sound at high gain knob, and when gain was lowered, sounded kind like oil fying sound. I suspected, when I was soldering jfet - the one before volume pot is.-, I made a mistake making bridge between jfet pins. Although I desoldered the bridge at very moment I made mistake, maybe it won't work. Then, I desoldered the pads and tested again, but wasn't fixed. So, I removed the jfet from pad, and hardwired to connecting jfet to circuit. You can see hardwired circuit in picture below.
-<p align="center">
-  <img src=asset/hardwire.jpeg>
-</p>
+I soldered the PCB as usual and tested it on a bare board. At first, it made a very loud, stinging noise when the gain knob was turned up high, and when the gain was lowered, it made a sound kind of like oil frying.
 
+I suspected that when I was soldering the JFET — the one before the volume pot — I might have accidentally created a solder bridge between the JFET pins. I removed the bridge immediately at that moment, but when I tested the circuit later, the problem still appeared. 
+So I desoldered the pads and tested again, but it didn’t fix the issue. At that point, I thought the pads on the PCB might have been damaged during the work.Or, JFET had been damaged by short. Then, I removed the JFET from the pads completely and tested if it is still working, and hardwired it directly into the circuit. As it turns out, the JFET was working fine; the problem was with the pads. You can see this hardwired setup in the picture below.
+
+
+<p align="center">
+  <img src=asset/hardwire.jpeg width="30%" height="30%">
+</p>
+### Debugging
+After fixing JFET, still there was treble oscillating in high gain. I have no idea to deal with it, so I discussed it with GPT. GPT helped me identify differences in slew rate and internal compensation as possible causes -I had to remove internal compesate capacitor while replace lm308 to TL072-. As they are different pinout - As, LM308 is single opamp, TL072 is dual opamp.-. But I didn't want editing, ordering PCB again, I have to keep using TL072. So I discussed it with GPT. Then I figured out, the ceramic disc capacitors was a problem. They are used in orinal circuit, but there isn't a problem. Because LM308 has significantly low slewrate(0.3V/us) than TL072 (13V/µs).Also, ceramic disc caps causes piezoelectric effect which makes the opamp more unstable. So, I substitute ceramic discs with MLCC capacitors, which are more stable, has lower esr at high frequencies.
