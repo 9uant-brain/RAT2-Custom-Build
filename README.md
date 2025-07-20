@@ -140,3 +140,5 @@ So I substituted the ceramic discs with MLCC capacitors, which have lower ESR at
 </p>
 It worked quite well — the oscillation threshold (i.e., the gain level at which oscillation starts) has increased. In other words, I can now turn the gain up higher without encountering oscillation.
 Additionally, since I used a chip with a higher slew rate, I also changed the value of the gain potentiometer. The original 100K pot caused excessive amplification even at around halfway, so I replaced it with a 50K ohm pot.
+
+But still there is oscillation, if gain gauge was over 50%. However, under 50% gain, it was still enough to shape the guitar signal, I didn't care more. Especially, when considered this was exprimental circuit. But, while organizing materials for right this project documenting, I carefully looked rat2 schematic again. And I just realized,
