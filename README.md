@@ -14,7 +14,7 @@ All schematic and PCB design work was done using KiCad, an open-source EDA softw
 ## Circuit analysis
 It can be broadly categorized into four sections: Power Supply, Gain, Tone, and LED Control.
 	<p align="center">
-  <img src="https://github.com/user-attachments/assets/c6f62f10-a760-46af-982d-2febacfc35e3" width="80%" height="80%">
+  <img src= asset/rat2_sch.gif width="80%" height="80%">
 </p>
 
 ### Power supply section
@@ -32,13 +32,13 @@ You might know this circuit as 'The Millennium Bypass.' Usually, you'd need a 3P
 
 Below, I've sketched out simple schematics for three different true bypass methods, all in their bypass mode. Most of these are pretty straightforward, but the Millennium Bypass has a counter-intuitive quirk with its LED section: the LED actually goes off when LED section is connected to the circuit. I'll explain exactly why that happens further down.
 <p align="center">
-  <img src="https://private-user-images.githubusercontent.com/204548792/466495233-fb15be54-6533-483f-9528-173ae62bb91f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTI1ODQ3NzgsIm5iZiI6MTc1MjU4NDQ3OCwicGF0aCI6Ii8yMDQ1NDg3OTIvNDY2NDk1MjMzLWZiMTViZTU0LTY1MzMtNDgzZi05NTI4LTE3M2FlNjJiYjkxZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNzE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDcxNVQxMzAxMThaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iOWExNjAwZTBmMDZhZDlmYmNhMGRiZmExMjNkMzIyNWUwNDNjOGRlYzM4MjRjMGRkNzVjNzUxODA4Y2FiZjliJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.k9JkBHPuEVCBAlt5nwCOrKCi7fEsQVsaK0DBf9QoU9c" width="80%" height="80%">
+  <img src=asset/bypass_types.png width="80%" height="80%">
 </p>
 
 ### The Millennium Bypass
 
 <p align="center">
-  <img src="https://private-user-images.githubusercontent.com/204548792/466499846-83423f2c-1d2c-466c-af22-9954b89b2693.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTI1ODUwNTEsIm5iZiI6MTc1MjU4NDc1MSwicGF0aCI6Ii8yMDQ1NDg3OTIvNDY2NDk5ODQ2LTgzNDIzZjJjLTFkMmMtNDY2Yy1hZjIyLTk5NTRiODliMjY5My5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNzE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDcxNVQxMzA1NTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jYjM5ZGIyNDhjZDE2ODY5OWExNjIzMTE2NTcyOGUzYzQxZjU3MGQxN2Y5MjZhNzIxN2I1OTFhMzdkNjA3MmNiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.djlTcDFREDv_DD06N_J3L01eSS76F3ktSGbd0yrHiTI" width="50%" height="50%">
+  <img src=asset/Millennium.gif width="50%" height="50%">
 </p>
 As you can see in the picture on the above, when the circuit is in bypass mode, the gate of the 5458 JFET is pulled directly to GND(Lime line). Because the gate is at GND, Vgs becomes almost 0, so the JFET channel closes. Even though 9V is still connected through the 2M2 resistor, its high resistance prevents it from affecting the gate voltage significantly.
 
@@ -49,7 +49,7 @@ On the other hand, when the effect is engage mode(the lime route is disconnected
 ### Schematic Creation
 	
  <p align="center">
-  <img src="https://private-user-images.githubusercontent.com/204548792/466495237-f4642b37-b8d7-4040-9003-0a6b1cbda21f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTI1ODUxMDEsIm5iZiI6MTc1MjU4NDgwMSwicGF0aCI6Ii8yMDQ1NDg3OTIvNDY2NDk1MjM3LWY0NjQyYjM3LWI4ZDctNDA0MC05MDAzLTBhNmIxY2JkYTIxZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNzE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDcxNVQxMzA2NDFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xYzBkYjBiYzgzOTRhMWYxMWEwMzhhNTBmYTBiYTg4NTZiNzk4ZTY5YWYzYTMyYzYxMmMwYmU1ZGZkYjU2ODA1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.YMrOmXduQZvBCqsLPTaM9H2DFLwhM4kcK39OkhZe6S4" width="80%" height="80%">
+  <img src=asset/kicad_sch.png width="80%" height="80%">
 </p>
 While the design largely follows the original, I encountered some resistance values that weren't available in my inventory. For these, I used series or parallel combinations to achieve approximate values. 
 The original RAT 2 uses the LM308 op-amp, but I wasn't keen on using a chip so specifically limited to just this pedal. Therefore, I opted for the TL072, which is more commonly used and versatile in guitar effects. 
@@ -58,17 +58,15 @@ Since the LM308 is a single op-amp and the TL072 is a dual op-amp, I adjusted th
 ### PCB layout Creation
 
 <p align="center">
-  <img src="https://private-user-images.githubusercontent.com/204548792/466495235-8c4abffb-5004-4ab0-b22b-dad97e9048ef.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTI2NDQ4MzAsIm5iZiI6MTc1MjY0NDUzMCwicGF0aCI6Ii8yMDQ1NDg3OTIvNDY2NDk1MjM1LThjNGFiZmZiLTUwMDQtNGFiMC1iMjJiLWRhZDk3ZTkwNDhlZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNzE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDcxNlQwNTQyMTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05MDMyMWYwZDU5OWE5ZjkyZmFjZWU4ZDE5MGJlNjg3MTQwOWZhYWQwOGQ4ZjM4OTczYTA5MmVhMDUzYWJkMzYwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.fcc9Ppy1N5-innBbMvQf9FiI54yzv3mWL4w7gE9NJeI" width="50%" height="50%">
+  <img src=asset/early_ver_pcb.png width="50%" height="50%">
 </p>
-
-
 
 The picture above shows an early version of the PCB layout. 
 Since I had to learn PCB design on my own, at first I wasn’t sure how large to make the board or how to shape the edge.cut layer. After I finished the initial design, I realized, "I can’t actually fit this PCB inside a 1590B enclosure, even with the audio jacks and DC jacks.
 So, I decided to redesign it from scratch.
 
 <p align="center">
-  <img src="https://private-user-images.githubusercontent.com/204548792/466495239-957cd9c8-42e4-4bc4-8edd-c0a3161ffdbe.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTI1ODUxMDEsIm5iZiI6MTc1MjU4NDgwMSwicGF0aCI6Ii8yMDQ1NDg3OTIvNDY2NDk1MjM5LTk1N2NkOWM4LTQyZTQtNGJjNC04ZWRkLWMwYTMxNjFmZmRiZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNzE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDcxNVQxMzA2NDFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00MmNkOTY4NGQwZjdjNThhNjEwMDhkOTFkN2QwYWRkZTNkMmI2ZjE4ZDJmOTk3NzQ2YzA2Zjk1OTBhNjkzMWVjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Uto47D-13c9zDUpiVAIIcj4gLhxT1OiMZU5BUsus8IU" width="30%" height="30%">
+  <img src=asset/final_ver_pcb.png width="30%" height="30%">
 </p>
 After several revisions, this layout was finally completed.
 
@@ -156,7 +154,7 @@ Upon further research, I discovered that this was meant to compensate for the re
 In contrast, op-amps like the 4558 (5–10 MΩ) or TL072 (up to 1 TΩ) have significantly higher input impedance, making the circuit much more sensitive — essentially turning it into a noise absorber and eventually causing oscillation. So, I modified the return path resistor, as shown in the image below. In the photo, you can see both the updated schematic and the temporarily soldered resistor that follows the new design.
 
 <p align="center">
-  <img src=asset/return2.png width="40%" height="40%">
+  <img src=asset/return2.png width="70%" height="70%">
 </p>
 
 Also, you may notice that this is a second, identical circuit board. I managed to solder the transistors perfectly on this one. As a result, I now have two boards: one with the original 2.2 MΩ return path, and another with the lowered return path — as shown in the image above.
