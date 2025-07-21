@@ -163,4 +163,4 @@ Also, you may notice that this is a second, identical circuit board. I managed t
 
 I compared both boards in the same signal chain, even swapping their positions during testing.You can watch the comparison video below.
 
-[![Video Label](http://img.youtube.com/vi/drDYGywl7zI.jpg)](https://youtu.be/drDYGywl7zI)
+[![Video Label](http://img.youtube.com/vi/drDYGywl7zI/0.jpg)](https://youtu.be/drDYGywl7zI)
