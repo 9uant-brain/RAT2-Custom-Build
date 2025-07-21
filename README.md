@@ -161,6 +161,6 @@ In contrast, op-amps like the 4558 (5–10 MΩ) or TL072 (up to 1 TΩ) have sign
 
 Also, you may notice that this is a second, identical circuit board. I managed to solder the transistors perfectly on this one. As a result, I now have two boards: one with the original 2.2 MΩ return path, and another with the lowered return path — as shown in the image above.
 
-I compared both boards in the same signal chain, even swapping their positions during testing.You can watch the comparison video below.
+I compared both boards in the same signal chain, even swapping their positions during testing. You can watch the comparison video below.
 
 [![Video Label](http://img.youtube.com/vi/drDYGywl7zI/0.jpg)](https://youtu.be/drDYGywl7zI)
