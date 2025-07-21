@@ -154,7 +154,7 @@ Upon further research, I discovered that this was meant to compensate for the re
 In contrast, op-amps like the 4558 (5–10 MΩ) or TL072 (up to 1 TΩ) have significantly higher input impedance, making the circuit much more sensitive — essentially turning it into a noise absorber and eventually causing oscillation. So, I modified the return path resistor, as shown in the image below. In the photo, you can see both the updated schematic and the temporarily soldered resistor that follows the new design.
 
 <p align="center">
-  <img src=asset/return2.png width="70%" height="70%">
+  <img src=asset/return2.png width="60%" height="60%">
 </p>
 
 Also, you may notice that this is a second, identical circuit board. I managed to solder the transistors perfectly on this one. As a result, I now have two boards: one with the original 2.2 MΩ return path, and another with the lowered return path — as shown in the image above.
