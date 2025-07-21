@@ -134,14 +134,30 @@ Then I figured out there was another chip, the JRC4558, which has the same pinou
 
 After discussing it again with GPT, I realized the problem might be the ceramic disc capacitors. Although they were used in the original circuit without issues, the LM308 has a significantly lower slew rate (0.3 V/µs) compared to the TL072 (13 V/µs) or even the 4558 (1.7 V/µs). The reason slew rate matters is that a higher slew rate allows an op-amp to respond faster to changes in the signal, which can lead to unintended oscillation if the circuit isn’t properly compensated. Also, ceramic disc capacitors tend to have higher ESR and less stable characteristics at high frequencies. When this used as a feedback capacitor, this can prevent high frequencies from being properly bypassed, which keeps them in the feedback loop and leads to oscillation.
 
-So I substituted the ceramic discs with MLCC capacitors, which have lower ESR at high frequencies.
+So I substituted the ceramic discs with MLCC capacitors, which have lower ESR at high frequencies. And, as you can see in the picture below, the ceramic disc capacitors have been replaced with MLCC types."
 <p align="center">
   <img src=asset/mlcc.jpeg width="40%" height="40%">
 </p>
 
----------------
 
 It worked quite well — the oscillation threshold (i.e., the gain level at which oscillation starts) has increased. In other words, I can now turn the gain up higher without encountering oscillation.
-Additionally, since I used a chip with a higher slew rate, I also changed the value of the gain potentiometer. The original 100K pot caused excessive amplification even at around halfway, so I replaced it with a 50K ohm pot.
+Additionally, since I used a chip with a higher slew rate — which allows for a higher gain under the same conditions — I also changed the value of the gain potentiometer. The original 100kΩ pot caused excessive amplification even around the halfway point, so I replaced it with a 50kΩ pot.
 
-But still there is oscillation, if gain gauge was over 50%. However, under 50% gain, it was still enough to shape the guitar signal, I didn't care more. Especially, when considered this was exprimental circuit. But, while organizing materials for right this project documenting, I carefully looked rat2 schematic again. And I just realized, as you can see in the picture above left, orignal circuit has high impedence input signal return routh-which is 'high input impedence'. I searched, and found, this was making up for LM308's lower input impedence(2MΩ). But, because 4558(5~10MΩ), TL072(1TΩ) have significant high impedence than LM308, it was so senstive. So it acted as noise absorber, and caused oscillation.
+---------------
+<p align="center">
+  <img src=asset/return1.jpeg width="40%" height="40%">
+</p>
+
+However, I still noticed some oscillation when the gain knob was set above 50%. Below that point, the circuit shaped the guitar signal reasonably well, so I didn’t consider it a major issue — especially since this was an experimental design.
+
+While organizing the project documentation, I revisited the original RAT2 schematic and realized something important: as shown in the image at the above, the original circuit includes a high-impedance return path at the input, effectively creating a high input impedance.
+
+Upon further research, I discovered that this was meant to compensate for the relatively low input impedance of the LM308 (around 2 MΩ).
+In contrast, op-amps like the 4558 (5–10 MΩ) or TL072 (up to 1 TΩ) have significantly higher input impedance, making the circuit much more sensitive — essentially turning it into a noise absorber and eventually causing oscillation. So, I modified the path resistor, as shown in the image at the below. You can see in the picture, modified path schematic and, temporarily soldered resistor as follow the schematic.
+
+<p align="center">
+  <img src=asset/return2.jpeg width="40%" height="40%">
+</p>
+
+And, you might noticed, that is another but same circuit board. I succeed to solder transistors perfectly on this one. By the way, now I have two board, one has still 2M2 return path, another has lowered return path - the one as shown above picture -. I compared them in same singal path, even tested in switched their positions. You can see the comparing video at the below.
+[![Video Label](http://img.youtube.com/vi/uLR1RNqJ1Mw/0.jpg)](https://youtu.be/uLR1RNqJ1Mw?t=0s)
