@@ -145,7 +145,7 @@ Additionally, since I used a chip with a higher slew rate — which allows for a
 
 ---------------
 <p align="center">
-  <img src=asset/return1.jpeg width="40%" height="40%">
+  <img src=asset/return1.png width="40%" height="40%">
 </p>
 
 However, I still noticed some oscillation when the gain knob was set above 50%. Below that point, the circuit shaped the guitar signal reasonably well, so I didn’t consider it a major issue — especially since this was an experimental design.
@@ -153,11 +153,14 @@ However, I still noticed some oscillation when the gain knob was set above 50%. 
 While organizing the project documentation, I revisited the original RAT2 schematic and realized something important: as shown in the image at the above, the original circuit includes a high-impedance return path at the input, effectively creating a high input impedance.
 
 Upon further research, I discovered that this was meant to compensate for the relatively low input impedance of the LM308 (around 2 MΩ).
-In contrast, op-amps like the 4558 (5–10 MΩ) or TL072 (up to 1 TΩ) have significantly higher input impedance, making the circuit much more sensitive — essentially turning it into a noise absorber and eventually causing oscillation. So, I modified the path resistor, as shown in the image at the below. You can see in the picture, modified path schematic and, temporarily soldered resistor as follow the schematic.
+In contrast, op-amps like the 4558 (5–10 MΩ) or TL072 (up to 1 TΩ) have significantly higher input impedance, making the circuit much more sensitive — essentially turning it into a noise absorber and eventually causing oscillation. So, I modified the return path resistor, as shown in the image below. In the photo, you can see both the updated schematic and the temporarily soldered resistor that follows the new design.
 
 <p align="center">
-  <img src=asset/return2.jpeg width="40%" height="40%">
+  <img src=asset/return2.png width="40%" height="40%">
 </p>
 
-And, you might noticed, that is another but same circuit board. I succeed to solder transistors perfectly on this one. By the way, now I have two board, one has still 2M2 return path, another has lowered return path - the one as shown above picture -. I compared them in same singal path, even tested in switched their positions. You can see the comparing video at the below.
-[![Video Label](http://img.youtube.com/vi/uLR1RNqJ1Mw/0.jpg)](https://youtu.be/uLR1RNqJ1Mw?t=0s)
+Also, you may notice that this is a second, identical circuit board. I managed to solder the transistors perfectly on this one. As a result, I now have two boards: one with the original 2.2 MΩ return path, and another with the lowered return path — as shown in the image above.
+
+I compared both boards in the same signal chain, even swapping their positions during testing.You can watch the comparison video below.
+
+[![Video Label](http://img.youtube.com/watch?v=drDYGywl7zI.jpg)](https://www.youtube.com/watch?v=drDYGywl7zI)
