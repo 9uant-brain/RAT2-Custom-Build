@@ -166,10 +166,11 @@ I compared both boards in the same signal chain, even swapping their positions d
 ## Sound review
 First, listen to the sound of the video below.
 [![Video Label](http://img.youtube.com/vi/0dIAr1F7TB0/0.jpg)](https://youtu.be/0dIAr1F7TB0)
+
 I played short riff of "Holy diver - Dio" with two same circuits pedal but, has different chip. The yellow one is equipped with JRC4558 chip, and the black one with TL072 chip. You might notice, the one with 4558 has sound more darker, relatively smooth treble. On contrary, the TL072 one has sound more bright, little bit sharp treble. 
 In case of you did't notice, I analyzed frequency resonpse of them. With a tool called as "Match EQ". It shows average freqeuncy response FFT. You can see
 that in the picture below. The yellow graph refers 4558 one, contrary blue graph refers TL072 one.
 <p align="center">
   <img src=asset/fr_analyze.png width="60%" height="60%">
 </p>
-I emphasized, different bands of frequency response. These responses aligns with 4558 and TL072 charateristics. As 4558 has relatively lower slew rate, TL072 has higher slew rate contrarily. 
+I emphasized, different bands of frequency response. Also, these responses aligns with 4558 and TL072 charateristics. As 4558 has relatively lower slew rate, TL072 has higher slew rate contrarily. 
