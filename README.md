@@ -171,10 +171,13 @@ First, listen to the sound of the video below.
 
 
 
-I played short riff of "Holy diver - Dio" with two same circuits pedal but, has different chip. The yellow one is equipped with JRC4558 chip, and the black one with TL072 chip. You might notice, the one with 4558 has sound more darker, relatively smooth treble. On contrary, the TL072 one has sound more bright, little bit sharp treble. 
-In case of you did't notice, I analyzed frequency resonpse of them. With a tool called as "Match EQ". It shows average freqeuncy response FFT. You can see
-that in the picture below. The yellow graph refers 4558 one, contrary blue graph refers TL072 one.
+I played a short riff from “Holy Diver” by Dio using two pedals with the same circuit design, but each equipped with a different op-amp chip. The yellow one uses a JRC4558 chip, while the black one has a TL072 chip.
+You might notice that the pedal with the 4558 sounds darker, with relatively smoother treble. In contrast, the TL072-equipped pedal sounds brighter, with slightly sharper treble.
+
+In case you didn’t catch the difference, I analyzed their frequency responses using a tool called “Match EQ,” which shows the average frequency response as an FFT graph. You can see the results in the picture below: the yellow graph represents the 4558, while the blue graph shows the TL072. I also pointed out the differences across various frequency bands in the analysis.
 <p align="center">
   <img src=asset/fr_analyze.png width="60%" height="60%">
 </p>
-I emphasized, different bands of frequency response. Also, these responses aligns with 4558 and TL072 charateristics. As 4558 has relatively lower slew rate, TL072 has higher slew rate contrarily. 
+These variations match the typical characteristics of each chip: the JRC4558 has a relatively lower slew rate, which contributes to its darker and smoother tone, whereas the TL072 has a higher slew rate, resulting in a brighter and slightly sharper sound.
+
+## Conclusion
