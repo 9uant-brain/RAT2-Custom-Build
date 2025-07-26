@@ -181,3 +181,7 @@ In case you didn’t catch the difference, I analyzed their frequency responses 
 These variations match the typical characteristics of each chip: the JRC4558 has a relatively lower slew rate, which contributes to its darker and smoother tone, whereas the TL072 has a higher slew rate, resulting in a brighter and slightly sharper sound.
 
 ## Conclusion
+Changing the RAT2’s op-amp chip was quite a reckless move. Especially since the RAT2 circuit has only a single op-amp stage. Op-amps with a high slew rate, like the TL072, are rarely used in single-stage designs because they’re more prone to oscillation.
+
+Honestly, I didn’t know that at first. But it turned out to be a great opportunity to learn how to handle such cases. On top of that, I ended up with a unique guitar pedal design that actually sounds pretty good. So although it wasn’t easy, it was very productive and rewarding. I’m really glad I successfully completed this project and built the pedal. 
+Thank you for reading this far!
