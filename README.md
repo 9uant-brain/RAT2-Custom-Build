@@ -176,7 +176,7 @@ You might notice that the pedal with the 4558 sounds darker, with relatively smo
 
 In case you didn’t catch the difference, I analyzed their frequency responses using a tool called “Match EQ,” which shows the average frequency response as an FFT graph. You can see the results in the picture below: the yellow graph represents the 4558, while the blue graph shows the TL072. I also pointed out the differences across various frequency bands in the analysis.
 <p align="center">
-  <img src=asset/fr_analyze.png width="60%" height="60%">
+  <img src=asset/fr_analyze.png width="80%" height="80%">
 </p>
 These variations match the typical characteristics of each chip: the JRC4558 has a relatively lower slew rate, which contributes to its darker and smoother tone, whereas the TL072 has a higher slew rate, resulting in a brighter and slightly sharper sound.
 
