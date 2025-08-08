@@ -40,9 +40,9 @@ Below, I've sketched out simple schematics for three different true bypass metho
 <p align="center">
   <img src=asset/Millennium.gif width="50%" height="50%">
 </p>
-As you can see in the picture on the above, when the circuit is in bypass mode, the gate of the 5458 JFET is pulled directly to GND(Lime line). Because the gate is at GND, Vgs becomes almost 0, so the JFET channel closes. Even though 9V is still connected through the 10M resistor, its high resistance prevents it from affecting the gate voltage significantly.
+As you can see in the picture on the above, when the circuit is in bypass mode, the gate of the 5458 JFET is pulled directly to GND(Lime line). Because the gate is at GND, Vgs below than 0V, so the JFET channel mostly closes. Even though 9V is still connected through the 10M resistor, its high resistance prevents it from affecting the gate voltage significantly.
 
-On the other hand, when the effect is engage mode(the lime route is disconnected), the gate is only pulled up to 9V through the 2M2 resistor(Red line). This creates a sufficiently positive Vgs, allowing the JFET channel to open.
+On the other hand, when the effect is engage mode(the lime route is disconnected), the gate is only pulled up to 9V through the 2M2 resistor(Red line). This creates a sufficiently positive Vgs (Vgs≥0), allowing the JFET channel to open.
 
 ## Design and Implementation
 
@@ -51,6 +51,8 @@ On the other hand, when the effect is engage mode(the lime route is disconnected
  <p align="center">
   <img src=asset/kicad_sch.png width="80%" height="80%">
 </p>
+※ In advance, I realize I made some mistakes while writing this post. Because 2 JFETs, gain potentiometer was placed reversely. The JFET's source and drain are swapped, and the potentiometer's pins 1 and 3 are swapped. I already knew the latter, as gain knob worked reversely, and it isn't major issue. But, swapped source and drain are major issue, it can't ensure jfet working properly. Fortunately, despite that, it didn't make any problems (even during debugging), and I couldn't notice until now. So, please read the following text with the assumption that the JFET's pins being swapped is not an issue.
+
 While the design largely follows the original, I encountered some resistance values that weren't available in my inventory. For these, I used series or parallel combinations to achieve approximate values. 
 The original RAT 2 uses the LM308 op-amp, but I wasn't keen on using a chip so specifically limited to just this pedal. Therefore, I opted for the TL072, which is more commonly used and versatile in guitar effects. 
 Since the LM308 is a single op-amp and the TL072 is a dual op-amp, I adjusted the pinouts accordingly. I also configured the circuit to deactivate the second op-amp of the TL072.
