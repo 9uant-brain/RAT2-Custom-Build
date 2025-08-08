@@ -124,9 +124,9 @@ To achieve accurate alignment, I followed these steps:
 </p>
 I soldered the PCB as usual and tested it on a bare board. At first, it made a very loud, stinging noise when the gain knob was turned up high, and when the gain was lowered, it made a sound kind of like oil frying.
 
-I suspected that when I was soldering the JFET — the one before the volume pot — I might have accidentally created a solder bridge between the JFET pins. I removed the bridge immediately at that moment, but when I tested the circuit later, the problem still appeared. 
+I suspected that I might have accidentally created a tiny solder bridge between the JFET pins while soldering the one before the volume potentiometer, which is acting as a buffer. I removed the bridge right away, but when I tested the circuit later, the problem still persisted.
 
-So I desoldered the pads and tested again, but it didn’t fix the issue. At that point, I thought the pads on the PCB might have been damaged during the work.Or, JFET had been damaged by short. Then, I removed the JFET from the pads completely and tested if it is still working, and hardwired it directly into the circuit. As it turns out, the JFET was working fine; the problem was with the pads. You can see this hardwired setup in the picture below.
+So I desoldered the pads and tested again, but it didn’t fix the issue. At that point, I thought the pads on the PCB might have been damaged during the work. Or, JFET had been damaged by short. Then, I removed the JFET from the pads completely and tested if it is still working, and hardwired it directly into the circuit. As it turns out, the JFET was working fine; the problem was with the pads. You can see this hardwired setup in the picture below.
 
 
 <p align="center">
@@ -138,9 +138,9 @@ After fixing the JFET issue, there was still a high-frequency oscillation in the
 
 Then I figured out there was another chip, the JRC4558, which has the same pinout but a lower slew rate than the TL072. So I ordered a 4558 and replaced the TL072, but it still didn’t fix the oscillation.
 
-After discussing it again with GPT, I realized the problem might be the ceramic disc capacitors. Although they were used in the original circuit without issues, the LM308 has a significantly lower slew rate (0.3 V/µs) compared to the TL072 (13 V/µs) or even the 4558 (1.7 V/µs). The reason slew rate matters is that a higher slew rate allows an op-amp to respond faster to changes in the signal, which can lead to unintended oscillation if the circuit isn’t properly compensated. Also, ceramic disc capacitors tend to have higher ESR and less stable characteristics at high frequencies. When this used as a feedback capacitor, this can prevent high frequencies from being properly bypassed, which keeps them in the feedback loop and leads to oscillation.
+After discussing it again with GPT, I realized the problem might be the ceramic disc capacitors. Although they were used in the original circuit without issues, the LM308 has a significantly lower slew rate (0.3 V/µs) compared to the TL072 (13 V/µs) or even the 4558 (1.7 V/µs). The reason slew rate matters is that a higher slew rate allows an op-amp to respond faster to changes in the signal, which can lead to unintended oscillation if the circuit isn’t properly compensated. Also, ceramic disc capacitors tend to have higher ESR and less stable characteristics at high frequencies. When used as feedback capacitors, this can prevent high frequencies from being properly bypassed, keeping them in the feedback loop and potentially causing oscillation.
 
-So I substituted the ceramic discs with MLCC capacitors, which have lower ESR at high frequencies. And, as you can see in the picture below, the ceramic disc capacitors have been replaced with MLCC types."
+So, I substituted the ceramic discs with MLCC capacitors, which offer lower ESR and better high-frequency performance. As you can see in the picture below, the ceramic disc capacitors have been replaced with MLCC types.
 <p align="center">
   <img src=asset/mlcc.jpeg width="40%" height="40%">
 </p>
