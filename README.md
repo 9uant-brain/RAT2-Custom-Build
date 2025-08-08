@@ -19,7 +19,7 @@ It can be broadly categorized into four sections: Power Supply, Gain, Tone, and 
 
 ### Power supply section
 
-This is the 9V voltage input section, and all other parts of the circuit receive their power from here. The diode conducts only when the voltage is reversed. When it conducts, all current flows through a 100-ohm resistor. This happens because, for reverse current, the resistance on that path is significantly lower. The 100uF capacitor is for 9V voltage stabilization, while the two 100k resistors form a voltage divider that converts the 9V supply to 4.5V. The 1uF capacitor then stabilizes the voltage from this voltage divider.
+This is the 9V input section, from which the rest of the circuit receives power. The diode conducts only when the polarity is reversed. When that happens, all current flows through a 100-ohm resistor, which acts as a fuse. This happens because, for reverse current, the resistance on that path is significantly lower. The 100uF capacitor is for 9V stabilization, while the two 100k resistors form a voltage divider that converts the 9V supply to 4.5V. The 1uF capacitor then stabilizes the voltage from this voltage divider.
 
 ### Clipping (gain) section 
 This is core section. The circuit uses an LM308 to form a non-inverting amplifier, for amplifying raw guitar signal. At the op-amp's output, there's a back-to-back diode clipping circuit. Signals exceeding the diodes' forward voltage are shunted to ground, which clips the upper part of the waveform. This is the principle behind the characteristic "chugging" sound of electric guitars. So, changing diodes is a common modification for distortion and overdrive pedals among guitarists.
@@ -40,9 +40,10 @@ Below, I've sketched out simple schematics for three different true bypass metho
 <p align="center">
   <img src=asset/Millennium.gif width="50%" height="50%">
 </p>
-As you can see in the picture above, when the circuit is in bypass mode, the gate of the 5458 JFET is pulled directly to GND (Lime line). Because the gate is at GND, Vgs is below 0V, so the JFET channel is largely closed. 
+As you can see in the picture above, when the circuit is in bypass mode, the gate of the 5458 JFET is pulled directly to GND (Lime line). Because the gate is at GND, Vgs is below 0V(Vs>0, Vg=0), so the JFET channel is largely closed. 
 
 Even though 9V is still connected through the 10M resistor, its high resistance prevents it from affecting the gate voltage significantly.
+
 On the other hand, when the effect is in engage mode (the lime route is disconnected), the gate is only pulled up to 9V through the 10M resistor (Red line). This creates a sufficiently positive Vgs (Vgs ≥ 0), ensuring that the JFET channel opens.
 
 ## Design and Implementation
