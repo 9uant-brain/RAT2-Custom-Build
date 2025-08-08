@@ -41,8 +41,7 @@ Below, I've sketched out simple schematics for three different true bypass metho
   <img src=asset/Millennium.gif width="50%" height="50%">
 </p>
 As you can see in the picture above, when the circuit is in bypass mode, the gate of the 5458 JFET is pulled directly to GND (Lime line). Because the gate is at GND, Vgs is below 0V(Vs>0, Vg=0), so the JFET channel is largely closed. 
-
-Even though 9V is still connected through the 10M resistor, its high resistance prevents it from affecting the gate voltage significantly.
+Even though 9V is still connected to the gate through the 10MΩ resistor, the high resistance prevents it from significantly affecting the gate voltage, as long as the gate is pulled to GND.
 
 On the other hand, when the effect is in engage mode (the lime route is disconnected), the gate is only pulled up to 9V through the 10M resistor (Red line). This creates a sufficiently positive Vgs (Vgs ≥ 0), ensuring that the JFET channel opens.
 
