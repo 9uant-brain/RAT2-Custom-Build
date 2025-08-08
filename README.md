@@ -115,7 +115,7 @@ To ensure precise drilling for the enclosure, I first printed the footprint at a
 To achieve accurate alignment, I followed these steps:
 
 1. Punctured the center of each hole on the paper using an awl.
-2. Used a nail to make a light center punch.
+2. Used an iron nail to make a light center punch.
 3. Drilled pilot holes with a 1.5mm bit.
 4. Enlarged the holes using a step drill bit to the desired size.
 ### Soldering & Testing
