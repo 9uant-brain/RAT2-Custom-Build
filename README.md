@@ -87,7 +87,8 @@ As far as I know, there’s no guitar effect pedal that places its DC jack in th
 
 While revising the PCB, I measured the actual size of the 1590B enclosure I had using vernier calipers. Then, I drew the footprint net to match the exact dimensions of the enclosure. I measured both the outer rectangle and the inner rectangle: the outer size was used for aligning the printed guide paper to the outside of the enclosure, while the inner size was used to set the board's dimensions and place internal components such as audio jacks and the foot switch.
 
-I also added arrows to indicate where holes would be drilled for the LED and potentiometer shafts. Since these parts are visible from the outside, I carefully positioned them to match the enclosure’s proportions. Additionally, I made sure to leave enough distance between the shafts so that, once the knobs are attached, they won’t interfere with each other. 
+I also added arrows to indicate where holes would be drilled for the LED and potentiometer shafts. Since these parts are visible from the outside, I carefully positioned them to match the proportions of the enclosure. I also ensured there was enough spacing between the shafts so that the knobs wouldn’t interfere with each other once attached.
+
 
 As you can see on the bottom left, there is the enclosure footprint. As you can see on the bottom right, I drew the PCB layout directly over this footprint to make sure my design would fit perfectly inside the enclosure.
 <p align="center">
