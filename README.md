@@ -61,6 +61,7 @@ So, please read the following text with the understanding that the JFET pin swap
 
 
 
+
 While the design largely follows the original, I encountered some resistance values that weren’t available in my inventory. To address this, I used series or parallel combinations to approximate the required values.
 The original RAT 2 uses the LM308 op-amp, but I wasn’t keen on using such a specific chip that’s mostly associated with just this pedal. So, I opted for the TL072 instead, which is more versatile and commonly used in guitar effects.
 Since the LM308 is a single op-amp and the TL072 is a dual op-amp, I adjusted the pinout accordingly. I also configured the circuit to deactivate the second op-amp in the TL072.
