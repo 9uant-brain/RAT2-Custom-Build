@@ -22,10 +22,10 @@ It can be broadly categorized into four sections: Power Supply, Gain, Tone, and 
 This is the 9V input section, from which the rest of the circuit receives power. The diode conducts only when the polarity is reversed. When that happens, all current flows through a 100-ohm resistor, which acts as a fuse. This happens because, for reverse current, the resistance on that path is significantly lower. The 100uF capacitor is for 9V stabilization, while the two 100k resistors form a voltage divider that converts the 9V supply to 4.5V. The 1uF capacitor then stabilizes the voltage from this voltage divider.
 
 ### Clipping (gain) section 
-This is core section. The circuit uses an LM308 to form a non-inverting amplifier, for amplifying raw guitar signal. At the op-amp's output, there's a back-to-back diode clipping circuit. Signals exceeding the diodes' forward voltage are shunted to ground, which clips the upper part of the waveform. This is the principle behind the characteristic "chugging" sound of electric guitars. So, changing diodes is a common modification for distortion and overdrive pedals among guitarists.
+This is core section. The circuit uses an LM308 to form a non-inverting amplifier, for amplifying raw guitar signal. At the op-amp's output, there's a back-to-back diode clipping circuit. Signals exceeding the diodes' forward voltage are shunted to ground, which limits both positive and negative peaks. This is the principle behind the characteristic "chugging" sound of electric guitars. So, changing diodes is a common modification for distortion and overdrive pedals among guitarists.
 
 ### Tone, output section
-Following the back-to-back clipping stage, you'll find the tone knob (potentiometer). This component adjusts the resistance (R) in an RC filter to control the high frequencies of the output signal. After this, a JFET (5458) acts as a source follower, serving to adequately boost the signal's strength.
+Following the back-to-back clipping stage, you'll find the tone knob (potentiometer). This component adjusts the resistance (R) in an RC filter to control the high frequencies of the output signal. After this, a JFET (5458) acts as a  source follower as a buffer (current gain, low output Z — not voltage gain).
 
 ### LED Control section
 You might know this circuit as 'The Millennium Bypass.' Usually, you'd need a 3PDT switch for a true bypass with an LED indicator control. But back in the day, 3PDT switches were hard to find. That's why pedals like the RAT used this bypass method. Normally, a 2PDT switch only gives you true bypass. However, by adding a JFET, this design also lets you control the LED's on/off state.
@@ -43,7 +43,7 @@ Below, I've sketched out simple schematics for three different true bypass metho
 As you can see in the picture above, when the circuit is in bypass mode, the gate of the 5458 JFET is pulled directly to GND (Lime line). Because the gate is at GND, Vgs is below 0V(Vs>0, Vg=0), so the JFET channel is largely closed. 
 Even though 9V is still connected to the gate through the 10MΩ resistor, the high resistance prevents it from significantly affecting the gate voltage, as long as the gate is pulled to GND.
 
-On the other hand, when the effect is in engage mode (the lime route is disconnected), the gate is only pulled up to 9V through the 10M resistor (Red line). This creates a sufficiently positive Vgs (Vgs ≥ 0), ensuring that the JFET channel opens.
+On the other hand, when the effect is in engaged mode (the lime route is disconnected), the gate is only pulled up to 9V through the 10M resistor (Red line). This creates a sufficiently positive Vgs (Vgs ≥ 0), ensuring that the JFET channel opens.
 
 ## Design and Implementation
 
@@ -58,6 +58,7 @@ I was already aware of the latter, as the gain knob worked in reverse — not a 
 Fortunately, despite this, the circuit functioned without any noticeable problems (even during debugging), so I didn’t realize the mistake until now.
 Also, in this circuit, the JFETs don’t play a critical role — they’re only used as buffers and for LED switching.<br/>
 So, please read the following text with the understanding that the JFET pin swap did not affect the circuit's operation.※<br/><br/>
+
 While the design largely follows the original, I encountered some resistance values that weren’t available in my inventory. To address this, I used series or parallel combinations to approximate the required values.
 The original RAT 2 uses the LM308 op-amp, but I wasn’t keen on using such a specific chip that’s mostly associated with just RAT2. So, I opted for the TL072 instead, which is more versatile and commonly used in guitar effects.
 Since the LM308 is a single op-amp and the TL072 is a dual op-amp, I adjusted the pinout accordingly. I also configured the circuit to deactivate the second op-amp in the TL072.
@@ -158,8 +159,8 @@ However, I still noticed some oscillation when the gain knob was set above 50%. 
 
 While organizing the project documentation, I revisited the original RAT2 schematic and realized something important: as shown in the image at the above, the original circuit includes a high-impedance return path at the input, effectively creating a high input impedance.
 
-Upon further research, I discovered that this was meant to compensate for the relatively low input impedance of the LM308 (around 2 MΩ).
-In contrast, op-amps like the 4558 (5–10 MΩ) or TL072 (up to 1 TΩ) have significantly higher input impedance, making the circuit much more sensitive — essentially turning it into a noise absorber and eventually causing oscillation. So, I modified the return path resistor, as shown in the image below. In the photo, you can see both the updated schematic and the temporarily soldered resistor that follows the new design.
+Upon further research, I discovered that this was meant to compensate for the relatively low input impedance of the LM308.
+In contrast, op-amps like the 4558 or TL072 have significantly higher input impedance, making the circuit much more sensitive — essentially turning it into a noise absorber and eventually causing oscillation. So, I modified the return path resistor, as shown in the image below. In the photo, you can see both the updated schematic and the temporarily soldered resistor that follows the new design.
 
 <p align="center">
   <img src=asset/return2.png width="60%" height="60%">
