@@ -155,7 +155,7 @@ Additionally, since I used a chip with a higher slew rate — which allows for a
   <img src=asset/return1.png width="40%" height="40%">
 </p>
 
-However, I still noticed some oscillation when the gain knob was set above 50%. Below that point, the circuit shaped the guitar signal reasonably well, so I didn’t consider it a major issue — especially since this was an experimental design.
+However, I still noticed some oscillation when the gain knob was set to around 50% or higher. Below that point, the circuit shaped the guitar signal reasonably well, so I didn’t consider it a major issue — especially since this was an experimental design.
 
 While organizing the project documentation, I revisited the original RAT2 schematic and realized something important: as shown in the image at the above, the original circuit includes a high-impedance return path at the input, effectively creating a high input impedance.
 
