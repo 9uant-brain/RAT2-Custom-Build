@@ -156,7 +156,7 @@ So, I substituted the ceramic discs with MLCC capacitors, which offer lower ESR 
 
 
 It worked quite well — the oscillation threshold (i.e., the gain level at which oscillation starts) has increased. In other words, I can now turn the gain up higher without encountering oscillation.
-Additionally, since I used a chip with a higher slew rate — which allows for a higher gain under the same conditions — I also changed the value of the gain potentiometer. The original 100kΩ pot caused excessive amplification even around the halfway point, so I replaced it with a 50kΩ pot.
+Additionally, since I used a chip with a higher slew rate — which indirectly allows for a higher gain under the same conditions — I also changed the value of the gain potentiometer. The original 100kΩ pot caused excessive amplification even around the halfway point, so I replaced it with a 50kΩ pot.
 
 ---------------
 <p align="center">
