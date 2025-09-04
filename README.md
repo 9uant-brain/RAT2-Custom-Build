@@ -78,7 +78,7 @@ Since the LM308 is a single op-amp and the TL072 is a dual op-amp, I adjusted th
 </p>
 
 The picture above shows an early version of the PCB layout. 
-Since I had to learn PCB design on my own, at first I wasn’t sure how large to make the board or how to shape the edge.cut layer. After I finished the initial design, I realized, "I can’t actually fit this PCB inside a 1590B enclosure, even with the audio jacks and DC jacks.
+Since I had to learn PCB design on my own, at first I wasn’t sure how large to make the board or how to shape the ``edge.cut`` layer. After I finished the initial design, I realized, "I can’t actually fit this PCB inside a 1590B enclosure, even with the audio jacks and DC jacks.
 So, I decided to redesign it from scratch.
 
 <p align="center">
