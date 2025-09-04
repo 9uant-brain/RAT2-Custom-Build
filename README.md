@@ -52,12 +52,20 @@ On the other hand, when the effect is in engaged mode (the lime route is disconn
  <p align="center">
   <img src=asset/kicad_sch.png width="80%" height="80%">
 </p>
-※ In advance, I’d like to acknowledge a few mistakes in this post.
-Two issues occurred: First, I accidentally reversed the source and drain of the JFETs. Second, I swapped pins 1 and 3 of the gain potentiometer.
-I was already aware of the latter, as the gain knob worked in reverse — not a major issue. However, the reversed source and drain on the JFETs are more significant, as this could prevent them from working properly.
-Fortunately, despite this, the circuit functioned without any noticeable problems (even during debugging), so I didn’t realize the mistake until now.
-Also, in this circuit, the JFETs don’t play a critical role — they’re only used as buffers and for LED switching.<br/>
-So, please read the following text with the understanding that the JFET pin swap did not affect the circuit's operation. ※<br/><br/>
+
+> **Note (In advance)**  
+> I’d like to acknowledge a few mistakes in this post. Two issues occurred:  
+> 1. I accidentally reversed the source and drain of the JFETs.  
+> 2. I swapped pins 1 and 3 of the gain potentiometer.  
+>
+> I was already aware of the latter, as the gain knob worked in reverse — not a major issue.  
+> However, the reversed source and drain on the JFETs are more significant, as this could prevent them from working properly.  
+>
+> Fortunately, despite this, the circuit functioned without any noticeable problems (even during debugging), so I didn’t realize the mistake until now. Also, in this circuit, the JFETs don’t play a critical role — they’re only used as buffers and for LED switching.  
+>
+> So, please read the following text with the understanding that the JFET pin swap did not affect the circuit's operation.
+
+<br/><br/>
 
 While the design largely follows the original, I encountered some resistance values that weren’t available in my inventory. To address this, I used series or parallel combinations to approximate the required values.
 The original RAT 2 uses the LM308 op-amp, but I wasn’t keen on using such a specific chip that’s mostly associated with just RAT2. So, I opted for the TL072 instead, which is more versatile and commonly used in guitar effects.
